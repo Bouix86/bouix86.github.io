@@ -1,3 +1,9 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8"><title>OAuth Callback</title></head>
-<body><p>Authorization complete. Return to Voltly.</p></body></html>
+<body>
+<script>
+// Extract query params and redirect to Voltly app
+const params = window.location.search;
+window.location.href = 'voltly://oauth/callback' + params;
+</script>
+</body></html>
