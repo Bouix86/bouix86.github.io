@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html><head><meta charset="UTF-8">
+<meta http-equiv="refresh" content="0;url=voltly://oauth/callback" id="redirect">
 <title>Voltly</title>
-<style>
-body{background:#0b0b0c;color:#fff;font-family:-apple-system,sans-serif;
-display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
-a{color:#64b5f6;font-size:1.2rem;text-decoration:none;padding:16px 32px;
-border:2px solid #64b5f6;border-radius:12px}
-</style></head>
+</head>
 <body>
-<a id="go" href="">Return to Voltly</a>
 <script>
-document.getElementById('go').href = 'voltly://oauth/callback' + window.location.search;
+// Also try JS redirect as fallback
+document.getElementById('redirect').content = '0;url=voltly://oauth/callback' + window.location.search;
+setTimeout(function(){ window.location = 'voltly://oauth/callback' + window.location.search; }, 100);
 </script>
 </body></html>
